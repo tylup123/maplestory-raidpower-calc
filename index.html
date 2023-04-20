@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<meta name="robots" content="noindex">
+<body>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">MapleStory Raid Power Calculator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2" class="center">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <form oninput="calc()">
+              <fieldset>
+                <legend>Character info</legend>
+                <label for="lv">Level:</label><br>
+                <input type="text" id="lv" name="lv" value="200"><br>
+                <label for="sf">Starforce from stat window:</label><br>
+                <input type="text" id="sf" name="sf" value="150"><br>
+                <div>
+                  <label for="guild">Is the character in a guild?</label>
+                  <input type="checkbox"
+                         name="guild"
+                         id="guild"
+                         value="guild"
+                         checked>
+                  <details>
+                    <summary>What's this?</summary>
+                    Guilds passively provide +15 starforce through the skill <strong>Amidst the Stars</strong>. This bonus doesn't contribute towards legion raid power.  If in a guild, leave this checked.
+                  </details>
+                </div>
+              </fieldset>
+            </form>
+          </td>
+          <td>
+            <fieldset>
+              <legend>Raid Power calculations</legend>
+              <label for="powLv">Level Power</label><br>
+              <output id="powLv" value = 0>0</output><br>
+              <br>
+              <label for="powSf">SF Power (SF from equips:
+                <data id=equipSf></data>)</label><br>
+              <output id="powSf" value = 0>0</output><br>
+              <br>
+              <label for="powBase">Base Power</label><br>
+              <output id="powBase" value = 0>0</output><br>
+              <br>
+              <b><label for="powTtl">Total Power</label><br>
+              <output id="powTtl" value = 0>0</output></b>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center" id="err">
+            <output class="err" id="error" value=""></output>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script src="script.js"></script>
+</body>
